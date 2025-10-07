@@ -24,4 +24,4 @@ Project Structure
 1.Database Setup
 
 * Database Creation : The project starts by creating a database named Zepto_Inventory.
-* Table Creation    : The table named Zepto is created to store the inventory data.The table structure includes columns for name,category,mrp,discount percent,discounted selling price,out of stock,quantity,available quantity,weight in gms.
+* Table Creation    : The table named Zepto is created to store the inventory data.The table structure includes columns for name,category,mrp,discount percent,discounted selling price,out of stock,quantity,available quantity,weight in gms..
