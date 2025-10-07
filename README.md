@@ -44,9 +44,52 @@ outOfStock Boolean,
 quantity integer
 );
 ```
--- data exploration
+2.Data exploration
 
 -- count of rows
 ```sql
 select count(*) from zepto;
+```
+
+-- sample data 
+
+```sql
+select * from zepto
+limit 5;
+```
+
+-- To check any null values in the table 
+
+```sql
+select * from zepto
+ where category is null 
+ or
+ name is null
+ or
+ mrp is null 
+ or
+ discountPercent is null
+ or 
+ availableQuantity is null
+ or 
+ discountedSellingPrice is null
+ or
+ weightInGms is null
+ or
+ outOfStock is null
+ or
+ quantity is null;
+```
+
+3.Data cleaning 
+
+-- product with price = 0
+
+```sql
+select * from zepto
+where mrp = 0 
+or discountedSellingPrice = 0;
+
+delete from zepto
+where mrp = 0;
 ```
