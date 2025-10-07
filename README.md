@@ -1,5 +1,7 @@
 Zepto Inventory Analysis SQL Project
+
 Project Title : Zepto Inventory Analysis
+
 level : Beginner
 
 Project Overview 
