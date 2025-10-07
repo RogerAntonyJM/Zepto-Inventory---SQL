@@ -146,13 +146,13 @@ from zepto
 group by category
 having sum(case when outOfStock = 'yes' then 1 else 0 end)> count(*)/2;
 ```
-Q7.find slow - moving inventory(high stock, low discount)
+Q8.find slow - moving inventory(high stock, low discount)
 ```sql
 select name,category,availableQuantity,discountPercent
 from zepto
 where availableQuantity>5 and discountPercent<10;
 ```
-Q8.find the top selling product(highests stock turnover) category
+Q9.find the top selling product(highests stock turnover) category
 ```sql
 select category,
 sum(quantity-availableQuantity) as sold_units
