@@ -103,3 +103,61 @@ from zepto
 order by discountPercent desc
 limit 10;
 ```
+Q2.find the product with highest mrp that are currently out of stock.
+```sql
+select distinct name , mrp
+from zepto
+where outOfStock=true 
+order by mrp desc;
+```
+Q3.find all products where discounted price > mrp (data issue)
+```sql
+select name ,category, discountedSellingPrice,mrp
+from zepto
+where discountedSellingPrice>mrp;
+```
+
+Q4.find the total number of available products per category
+```sql
+select category , count(*) as available_products
+from zepto
+where outOfStock=false
+group by category;
+```
+
+Q5.calculate the average mrp per category
+```sql
+select category ,
+round(avg(mrp),2) as avg_mrp
+from zepto
+group by category;
+```
+Q6.calculate total inventory value per category
+```sql
+select category,
+sum(discountedSellingPrice*availablequantity) as total_inventory_value
+from zepto
+group by category;
+```
+Q7.find categories where more than 50% products are out of stock
+```sql
+select category
+from zepto
+group by category
+having sum(case when outOfStock = 'yes' then 1 else 0 end)> count(*)/2;
+```
+Q7.find slow - moving inventory(high stock, low discount)
+```sql
+select name,category,availableQuantity,discountPercent
+from zepto
+where availableQuantity>5 and discountPercent<10;
+```
+Q8.find the top selling product(highests stock turnover) category
+```sql
+select category,
+sum(quantity-availableQuantity) as sold_units
+from zepto
+group by category
+order by sold_units desc
+limit 5;
+```
