@@ -96,6 +96,10 @@ where mrp = 0;
 
 4.Data Analysis & Findings
 
-```sql
 Q1.Find the top 10 best-value product based on the discount percentage.
+```sql
+select distinct name ,mrp,discountPercent 
+from zepto
+order by discountPercent desc
+limit 10;
 ```
