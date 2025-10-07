@@ -15,8 +15,11 @@ Price distribution and pricing strategy
 Objectives 
 
 1.Setup a Zepto Inventory database : Create and populate a zepto Inventory database with provided inventory data.
+
 2.Data Cleaning : Identify and Remove any records with missing or null values.
+
 3.Exploratory Data Analysis (EDA) : Perfom basic exploratory data analysis toi understand the dataset.
+
 4.Business Analysis : use SQL to answer specific bussiness questions and derive insights from the data.
 
 Project Structure
